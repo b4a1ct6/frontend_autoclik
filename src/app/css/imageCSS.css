@@ -1,0 +1,11 @@
+.imagecontainer {
+      display: grid;
+      grid-template-columns: 2fr;
+      row-gap: 2rem;
+    }
+
+
+  .responsive {
+    max-width: 100%;
+    height: auto;
+  }

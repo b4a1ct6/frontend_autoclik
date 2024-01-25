@@ -1,0 +1,130 @@
+.tire {
+  position: relative;
+}
+
+.centerpoint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 30%;
+  width: 20%;
+  padding-bottom: 20%;
+  background-size: contain;
+}
+
+.maintyres {
+  position: absolute;
+  background: url("../images/tyres/tyre.png");
+  width: 200%;
+  height: 200%;
+  margin-top: 10%;
+  padding-bottom: 10%;
+  background-size: inherit;
+  background-repeat: no-repeat;
+  animation: rotateHub 20s infinite cubic-bezier(0, 1, 0.58, 1);
+  transform: translate(-50%, -50%);
+}
+
+.vehicle {
+  position: absolute;
+  background: url("../images/tyres/vehicle.png");
+  width: 10%;
+  height: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 45%;
+  margin-top: 0.8vw;
+}
+
+.vehicle_tyres1 {
+  position: absolute;
+  background: url("../images/tyres/rim.png");
+  width: 10%;
+  height: 10%;
+  margin-top: 1.8vw;
+  left: 5%;
+  margin-left: 73%;
+  padding-bottom: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: rotateHub 20s infinite cubic-bezier(0, 1, 0.58, 1)
+}
+
+.vehicle_tyres2 {
+  position: absolute;
+  background: url("../images/tyres/rim.png");
+  width: 10%;
+  height: 10%;
+  margin-top: 1.8vw;
+  left: 5%;
+  margin-left: 105%;
+  padding-bottom: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: rotateHub 20s infinite cubic-bezier(0, 1, 0.58, 1)
+}
+
+.autoclik_fastfit{
+  position: absolute;
+  background: url("../images/tyres/autoclick-fastfit.svg");
+  width: 15%;
+  height: 15%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 43%;
+  margin-top: 6vw;
+  z-index: 1;
+}
+
+.arrowleft{
+  position: absolute;
+  background: url("../images/tyres/controls-left.svg");
+  width: 8%;
+  height: 8%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 35%;
+  margin-top: 0vw;
+  z-index: 1;
+}
+
+.arrowright{
+  position: absolute;
+  background: url("../images/tyres/controls-right.svg");
+  width: 8%;
+  height: 8%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 56%;
+  margin-top: 0vw;
+  z-index: 1;
+}
+
+
+
+@keyframes rotateHub {
+  0% {
+    transform: rotate(0deg);
+  }
+  14.28571428571429% {
+    transform: rotate(51.42857142857143deg);
+  }
+  28.57142857142857% {
+    transform: rotate(102.8571428571429deg);
+  }
+  42.85714285714286% {
+    transform: rotate(154.2857142857143deg);
+  }
+  57.14285714285715% {
+    transform: rotate(205.7142857142858deg);
+  }
+  71.42857142857144% {
+    transform: rotate(257.1428571428572deg);
+  }
+  85.71428571428573% {
+    transform: rotate(308.5714285714286deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

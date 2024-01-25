@@ -1,0 +1,23 @@
+.cal {
+    display: inline-block;
+    border: .1px solid #CCCAC5;
+    background-color: #FFF;
+    border-radius: 5px;
+    width: 50px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .cal .month {
+    height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+    background-color: #f8981d;
+    color: #FFF;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .cal .date {
+    font-size: 15px;
+    color: #585858;
+    line-height: 30px;
+  }
