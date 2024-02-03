@@ -397,8 +397,7 @@ export default function Tip_trick() {
               )}
             </Grid>
           ) : (
-            // <Loading />
-            null
+            <Loading />
           )}
         </ThemeProvider>
       </Background>

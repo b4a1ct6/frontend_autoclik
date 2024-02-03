@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import "@/app/css/loadingCSS.css";
+import '@/app/css/loadingCSS.css';
 import { Grid } from '@mui/material';
 
 

@@ -395,8 +395,7 @@ export default function News_events() {
               )}
             </Grid>
           ) : 
-            // <Loading />
-            null
+            <Loading />
           }
         </ThemeProvider>
       </Background>
