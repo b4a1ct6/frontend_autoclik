@@ -384,16 +384,16 @@ export default function Hot_deal() {
               </Grid>
 
               {isDesktop && (
-              <Grid item xs={3} sx={{ height: "", bgcolor: "", p: 3 }}>
-                <Blog_category />
-              </Grid>
-            )}
+                <Grid item xs={3} sx={{ height: "", bgcolor: "", p: 3 }}>
+                  <Blog_category />
+                </Grid>
+              )}
 
-            {!isDesktop && (
-              <Grid item xs={12} sx={{ height: "", bgcolor: "", p: 2 }}>
-                <Blog_category />
-              </Grid>
-            )}
+              {!isDesktop && (
+                <Grid item xs={12} sx={{ height: "", bgcolor: "", p: 2 }}>
+                  <Blog_category />
+                </Grid>
+              )}
             </Grid>
           ) : (
             <Loading />
