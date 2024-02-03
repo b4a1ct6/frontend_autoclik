@@ -1,11 +1,6 @@
 const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config) => {
-    config.resolve.alias['@'] = path.join(__dirname, '.');
-
-    return config;
-  },
   images: {
     domains: ['www.autoclikfastfit.com', 'autoclick.ach.co.th', 'http://localhost:8085','http://localhost:1337','127.0.0.1','3x51s9tl-8085.asse.devtunnels.ms'],
   },
