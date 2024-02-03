@@ -396,7 +396,8 @@ export default function Hot_deal() {
               )}
             </Grid>
           ) : (
-            <Loading />
+            // <Loading />
+            null
           )}
         </ThemeProvider>
       </Background>
