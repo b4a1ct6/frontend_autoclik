@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { Box, CssBaseline, Grid, useMediaQuery } from "@mui/material";
 import React, { useEffect, useState }  from "react";
 import banner1_image from "../../images/BANNER001-05-scaled.jpg";
@@ -13,7 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../../css/youtubeCSS.css";
 import useWindowWidth from "../useWindowWidth";
 
-export default function content() {
+export default function Content() {
   const isDesktop  = useMediaQuery('(min-width:1200px)')
 
     const banner_image = [
@@ -41,7 +41,7 @@ export default function content() {
         <React.Fragment>
             <CssBaseline />
 
-            <Grid item xs={12} sx={{ mt: 2, ml: isDesktop?5:2, mr: isDesktop?5:2 }}>
+            <Grid item xs={12} sx={{ mt: isDesktop?15:10, pl: isDesktop?10:1, pr: isDesktop?10:1 }}>
               <Box sx={{ height: "", bgcolor: "" }}>
               
                 <div className="videoWrapper">
@@ -60,7 +60,7 @@ export default function content() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} sx={{ pt: 2, pl: isDesktop?5:2, pr: isDesktop?5:2 }}>
+            <Grid item xs={12} sx={{ pt: 2, pl: isDesktop?10:1, pr: isDesktop?10:1 }}>
               <Box sx={{ height: "", bgcolor: ""}}>
                 <Slider {...settings}>
                   {banner_image.map((item) => (

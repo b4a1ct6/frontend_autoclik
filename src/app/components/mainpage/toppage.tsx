@@ -1,20 +1,29 @@
 'use client'
-import { Box, CssBaseline, Grid, Typography } from "@mui/material";
+import { Box, CssBaseline, Grid, ThemeProvider, Typography, createTheme } from "@mui/material";
 import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import autoclik_logo from "../../images/Logo-02-1400x563.png";
 import { motion } from "framer-motion";
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTranslation } from 'react-i18next';
 
 
-export default function toppage() {
+export default function Toppage() {
+  const { t } = useTranslation();
+
+  const font = createTheme({
+    typography: {
+      fontFamily: ["Kanit", "sans-serif"].join(","),
+    },
+  });
 
   const isDesktop  = useMediaQuery('(min-width:1200px)')
 
   return (
     <>
-      
-      <Grid container sx={{ mt: 5, mb: 10 }}> 
+      <ThemeProvider theme={font}>
+      <Grid container sx={{ mt: 5, mb: 5}}> 
+      {isDesktop && (
         <Grid item xs={6} sx={{ display: "flex", justifyContent: "center" }}>
           <div>
             <motion.div
@@ -30,29 +39,29 @@ export default function toppage() {
             </motion.div>
           </div>
         </Grid>
+        )}
 
 
-        <Grid item xs={6}>
+        <Grid item xs={isDesktop?6:12} sx={{ display: "flex", justifyContent: "center" }}>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{opacity: 1, y: 0}}
             transition={{ duration: 0.5 }}
           >
+            <Box sx={{width:isDesktop?'30vw':'auto'}}>
             <Typography
               sx={{
                 color: "white",
-                fontSize: isDesktop? '30px' : '15px',
+                fontSize: isDesktop? '28px' : '13px',textAlign:'center'
               }}
             >
-              Fit for tyres, brakes, shock,
-              <br />
-              batteries, suspension, air-conditioner
-              <br />
-              and automotive service business
+              {t('Common:slogan')}
             </Typography>
+            </Box>
           </motion.div>
         </Grid>
       </Grid>
+      </ThemeProvider>
     </>
   );
 }

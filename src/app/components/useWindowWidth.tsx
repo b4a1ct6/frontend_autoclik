@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function useWindowWidth() {
+export default function UseWindowWidth() {
   const isClient = typeof window === "object";
 
   // ใช้ optional chaining operator เพื่อหลีกเลี่ยง ReferenceError

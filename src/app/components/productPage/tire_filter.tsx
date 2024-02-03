@@ -1,7 +1,7 @@
 import { Box, CssBaseline, Grid, Typography } from "@mui/material";
 import React from "react";
 
-export default function tire_filter(){
+export default function Tire_filter(){
 
     const brand = [
         "BRIDGESTONE",
@@ -54,8 +54,9 @@ export default function tire_filter(){
                       BRAND
                     </Typography>
 
-                    {brand.map((brand_name) => (
-                      <div className="checkbox-wrapper-4" key={brand_name}>
+                    {brand.map((brand_name:any,index:any) => (
+                      <React.Fragment key={index}>
+                      <div className="checkbox-wrapper-4" key={index}>
                         <input
                           className="inp-cbx"
                           id={brand_name}
@@ -77,6 +78,7 @@ export default function tire_filter(){
                           </symbol>
                         </svg>
                       </div>
+                      </React.Fragment>
                     ))}
 
                   </Box>
@@ -104,8 +106,8 @@ export default function tire_filter(){
                     >
                       WIDTH
                     </Typography>
-                    {width.map((width_name) => (
-                      <div className="checkbox-wrapper-4" key={width_name}>
+                    {width.map((width_name:any,index:any) => (
+                      <div className="checkbox-wrapper-4" key={index}>
                         <input
                           className="inp-cbx"
                           id={width_name}
@@ -140,8 +142,8 @@ export default function tire_filter(){
                     >
                       RATIO
                     </Typography>
-                    {ratio.map((ratio_name) => (
-                      <div className="checkbox-wrapper-4">
+                    {ratio.map((ratio_name:any,index:any) => (
+                      <div className="checkbox-wrapper-4" key={index}>
                         <input
                           className="inp-cbx"
                           id={ratio_name}
@@ -176,8 +178,8 @@ export default function tire_filter(){
                     >
                       DIAMETER
                     </Typography>
-                    {diameter.map((diameter_name) => (
-                      <div className="checkbox-wrapper-4" key={diameter_name}>
+                    {diameter.map((diameter_name:any,index:any) => (
+                      <div className="checkbox-wrapper-4" key={index}>
                         <input
                           className="inp-cbx"
                           id={diameter_name}

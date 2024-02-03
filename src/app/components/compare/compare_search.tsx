@@ -20,12 +20,16 @@ import {
 import Image from "next/image";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import Divider from '@mui/material/Divider';
+import Divider from "@mui/material/Divider";
 import Link from "next/link";
+import AccordionGroup from "@mui/joy/AccordionGroup";
+import AccordionSummary from "@mui/joy/AccordionSummary";
+import AccordionDetails from "@mui/joy/AccordionDetails";
+import Accordion, { accordionClasses } from "@mui/joy/Accordion";
 
-export default function compare_search() {
+export default function Compare_search() {
   const isDesktop = useMediaQuery("(min-width:1200px)");
-  
+
   const font = createTheme({
     typography: {
       fontFamily: ["Kanit", "sans-serif"].join(","),
@@ -86,95 +90,169 @@ export default function compare_search() {
   return (
     <React.Fragment>
       <CssBaseline>
-        <Box
+        <Grid
+          item
+          xs={isDesktop ? 5 : 12}
           sx={{
-            bgcolor: "#fbfcfe",
-            p: 3,
-            border: "1px solid #dddfe2",
-            height: "100%",borderRadius:'5px'
+            pt: isDesktop ? 5 : 1,
+            pl: isDesktop ? 5 : 1,
+            pr: isDesktop ? 5 : 1,
           }}
         >
-          <Input
-            placeholder="Search"
-            variant="outlined"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-
-          <Grid item xs={12} sx={{ minHeight:isDesktop?'85vh':'50vh',maxHeight: isDesktop?'85vh':'50vh', overflow: "auto" }}>
-            {filteredNames.map((row: any, index: any) => (
-              <Grid container sx={{ mt: 2 }} key={index}>
-                <Grid
-                  item
-                  xs={3}
-                  sx={{ justifyContent: "center", display: "flex" }}
-                >
-                  <Link href={`/product/${row.id}`}>
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_APP_STRAPI_BASE_URL}${
-                      row.attributes.product_img.data?.attributes.url || ""
-                    }`}
-                    width={70}
-                    height={70}
-                    alt={""}
-                    quality={100}
-                    // style={{boxShadow: 'rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px'}}
-                  />
-                  </Link>
-                </Grid>
-                <Grid item xs={7}>
-                  <div
-                    onClick={() => handleAddToCompare(row.id.toString())}
-                    key={index}
-                  >
-                    <ThemeProvider theme={font}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          color: "black",
-                          mt: 2,
-                          transition:'0.2s',
-                          cursor:'pointer',
-                          ":hover":{
-                            color:'#f8981d'
-                          }
-                        }}
-                      >
-                        {row.attributes.product_name}
-                      </Typography>
-                    </ThemeProvider>
-                  </div>
-                </Grid>
-                <Grid
-                  item
-                  xs={2}
+          <AccordionGroup
+            sx={{
+              [`& .${accordionClasses.root}`]: {
+                marginTop: "0.5rem",
+                transition: "0.2s ease",
+                '& button:not([aria-expanded="true"])': {
+                  borderRadius:"5px",
+                  transition: "0.2s ease",
+                  paddingBottom: "0.625rem",
+                  color: "black",
+                  bgcolor:"#f8981d"
+                },
+                "& button:hover": {
+                  background: "transparent",
+                  bgcolor:"#ffab1d"
+                },
+              },
+              [`& .${accordionClasses.root}.${accordionClasses.expanded}`]: {
+                bgcolor: "#f8981d",
+                borderRadius: "5px",
+                borderBottom: "1px solid",
+                borderColor: "#f8981d",
+              },
+              '& [aria-expanded="true"]': {
+                boxShadow: (theme) =>
+                  `inset 0 -1px 0 ${theme.vars.palette.divider}`,
+              },
+            }}
+          >
+            <Accordion>
+              <AccordionSummary>
+                <ThemeProvider theme={font}>
+                  <Typography sx={{ fontSize: isDesktop ? "18px" : "16px",fontWeight:'bold'}}>
+                    SEARCH
+                  </Typography>
+                </ThemeProvider>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Box
                   sx={{
-                    justifyContent: "center",
-                    display: "flex",
-                    alignItems: "center",
+                    bgcolor: "#fbfcfe",
+                    p: 3,
+                    border: "1px solid #dddfe2",
+                    height: "100%",
+                    borderRadius: "5px",
                   }}
                 >
-                  <div
-                    onClick={() => handleAddToCompare(row.id.toString())}
-                    key={index}
+                  <Input
+                    placeholder="Search"
+                    variant="outlined"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+
+                  <Grid
+                    item
+                    xs={12}
+                    sx={{
+                      minHeight: isDesktop ? "65vh" : "50vh",
+                      maxHeight: isDesktop ? "65vh" : "50vh",
+                      overflow: "auto",
+                    }}
                   >
-                    <Typography sx={{ color: "black",cursor:'pointer'}}>
-                      {select_compareproduct.product_compare.includes(
-                        row.id.toString()
-                      ) ? (
-                        <BookmarkIcon sx={{color:'#f8981d'}}/>
-                      ) : (
-                        <BookmarkBorderIcon sx={{transition:'0.2s',":hover":{
-                          color:'#f8981d'
-                        }}}/>
-                      )}
-                    </Typography>
-                  </div>
-                </Grid>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+                    {filteredNames.map((row: any, index: any) => (
+                      <Grid container sx={{ mt: 2 }} key={index}>
+                        <Grid
+                          item
+                          xs={3}
+                          sx={{ justifyContent: "center", display: "flex" }}
+                        >
+                          <Link href={`/product/${row.id}`}>
+                            <Image
+                              src={`${
+                                process.env.NEXT_PUBLIC_APP_STRAPI_BASE_URL
+                              }${
+                                row.attributes.product_img.data?.attributes
+                                  .url || ""
+                              }`}
+                              width={70}
+                              height={70}
+                              alt={""}
+                              quality={100}
+                              // style={{boxShadow: 'rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px'}}
+                            />
+                          </Link>
+                        </Grid>
+                        <Grid item xs={7}>
+                          <div
+                            onClick={() =>
+                              handleAddToCompare(row.id.toString())
+                            }
+                            key={index}
+                          >
+                            <ThemeProvider theme={font}>
+                              <Typography
+                                sx={{
+                                  fontSize: "16px",
+                                  color: "black",
+                                  mt: 2,
+                                  transition: "0.2s",
+                                  cursor: "pointer",
+                                  ":hover": {
+                                    color: "#f8981d",
+                                  },
+                                }}
+                              >
+                                {row.attributes.product_name}
+                              </Typography>
+                            </ThemeProvider>
+                          </div>
+                        </Grid>
+                        <Grid
+                          item
+                          xs={2}
+                          sx={{
+                            justifyContent: "center",
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
+                          <div
+                            onClick={() =>
+                              handleAddToCompare(row.id.toString())
+                            }
+                            key={index}
+                          >
+                            <Typography
+                              sx={{ color: "black", cursor: "pointer" }}
+                            >
+                              {select_compareproduct.product_compare.includes(
+                                row.id.toString()
+                              ) ? (
+                                <BookmarkIcon sx={{ color: "#f8981d" }} />
+                              ) : (
+                                <BookmarkBorderIcon
+                                  sx={{
+                                    transition: "0.2s",
+                                    ":hover": {
+                                      color: "#f8981d",
+                                    },
+                                  }}
+                                />
+                              )}
+                            </Typography>
+                          </div>
+                        </Grid>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Box>
+              </AccordionDetails>
+            </Accordion>
+          </AccordionGroup>
+        </Grid>
       </CssBaseline>
     </React.Fragment>
   );

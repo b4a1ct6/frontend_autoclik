@@ -12,11 +12,13 @@ import Divider from "@mui/joy/Divider";
 import { motion } from "framer-motion";
 import Drawer from '@mui/material/Drawer';
 import TuneIcon from '@mui/icons-material/Tune';
+import { useTranslation } from "react-i18next";
 
 type Anchor = 'left';
 
 
-export default function allproduct_filter_mobile(){
+export default function Allproduct_filter_mobile(){
+  const { t } = useTranslation();
     
     const font = createTheme({
         typography: {
@@ -595,9 +597,9 @@ export default function allproduct_filter_mobile(){
                       color: "black",
                     }}
                   >
-                    FILTER
+                    {t('Filter:filter')}
                   </Typography>
-                  <Box sx={{ m: 2 }}>
+                  <Box sx={{ mt: 2 }}>
                     <Typography
                       sx={{
                         fontSize: "15px",
@@ -605,12 +607,12 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      VEHICLE
+                      {t('Filter:vehicle')}
                     </Typography>
                   </Box>
                   </ThemeProvider>
                  
-                  <Box sx={{ m:2 }}>
+                  <Box sx={{ m:0 }}>
                     <AccordionGroup disableDivider sx={{ maxWidth: 'auto' }}>
                     <motion.div
                       initial={{ opacity: 0, y: -5}}
@@ -627,7 +629,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      TYPES
+                      {t('Filter:types')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -674,7 +676,7 @@ export default function allproduct_filter_mobile(){
                       transition={{ duration: 0.3 }}
                     >
                        <Divider orientation="horizontal">
-                      TIRES
+                       {t('Common:tires')}
                     </Divider>
                     <Accordion defaultExpanded >
                       <AccordionSummary>
@@ -685,7 +687,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      BRANDS
+                      {t('Filter:brands')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -736,7 +738,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      DIAMETER
+                      {t('Filter:diameter')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -787,7 +789,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      WIDTH
+                      {t('Filter:width')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -838,7 +840,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      RATIO
+                      {t('Filter:ratio')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -881,7 +883,7 @@ export default function allproduct_filter_mobile(){
                     {subLubeOil_brand_fIlter?
                     <AccordionGroup disableDivider sx={{ maxWidth: 'auto' }}>
                        <Divider orientation="horizontal">
-                      LUBE OIL
+                       {t('Common:lube-oil')}
                     </Divider>
                     <Accordion defaultExpanded >
                       <AccordionSummary>
@@ -892,7 +894,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      BRANDS
+                      {t('Filter:brands')}
                     </Typography>
                     </ThemeProvider>    
                     </AccordionSummary>
@@ -943,7 +945,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      FLUID TYPES
+                      {t('Filter:fluid-types')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -994,8 +996,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      TYPES OF <br /> 
-                      ENGINE OIL
+                      {t('Filter:types-of-engine-oil')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -1037,7 +1038,7 @@ export default function allproduct_filter_mobile(){
                     {subShockAbsorber_brand_fIlter?
                     <AccordionGroup disableDivider sx={{ maxWidth: 'auto' }}>
                        <Divider orientation="horizontal">
-                      SHOCK ABSORBER
+                       {t('Common:shock-absorber')}
                     </Divider>
                     <Accordion defaultExpanded >
                       <AccordionSummary>
@@ -1048,7 +1049,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      BRANDS
+                      {t('Filter:brands')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -1098,7 +1099,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      SHOCK UP TYPE
+                      {t('Filter:shock-up-type')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -1140,7 +1141,7 @@ export default function allproduct_filter_mobile(){
                     {subBrake_brand_fIlter?
                     <AccordionGroup disableDivider sx={{ maxWidth: 'auto' }}>
                       <Divider orientation="horizontal">
-                      BRAKE
+                      {t('Common:brakes')}
                     </Divider>
                     <Accordion defaultExpanded >
                       <AccordionSummary>
@@ -1152,7 +1153,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      BRANDS
+                      {t('Filter:brands')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -1202,7 +1203,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      BRAKE TYPE
+                      {t('Filter:brake-type')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -1244,7 +1245,7 @@ export default function allproduct_filter_mobile(){
                     {subBattery_brand_fIlter?
                     <AccordionGroup disableDivider sx={{ maxWidth: 'auto' }}>
                       <Divider orientation="horizontal">
-                      BATTERY
+                      {t('Common:battery')}
                     </Divider>
                     <Accordion defaultExpanded >
                       <AccordionSummary>
@@ -1256,7 +1257,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      BRANDS
+                      {t('Filter:brands')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -1306,7 +1307,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      AMP
+                      {t('Filter:amp')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -1348,7 +1349,7 @@ export default function allproduct_filter_mobile(){
                     {subOtherproduct_brands?
                     <AccordionGroup disableDivider sx={{ maxWidth: 'auto' }}>
                       <Divider orientation="horizontal">
-                      OTHER PRODUCT
+                      {t('Common:other-product')}
                     </Divider>
                     <Accordion defaultExpanded >
                       <AccordionSummary>
@@ -1359,7 +1360,7 @@ export default function allproduct_filter_mobile(){
                         color: "black",
                       }}
                     >
-                      BRANDS
+                      {t('Filter:brands')}
                     </Typography>
                     </ThemeProvider>
                     </AccordionSummary>
@@ -1418,7 +1419,7 @@ export default function allproduct_filter_mobile(){
                     </Box>
                     <Box sx={{justifyContent:'left',display:'flex',alignItems:'center'}}>
                 <Typography sx={{color:'black',fontSize:'18px',transition:'0.2s',":hover":{color:'#f8981d'}}} onClick={toggleDrawer(anchor, true)}>
-                    FILTER
+                    {t('Filter:filter')}
                     </Typography>
                     </Box>
                     </Grid>
