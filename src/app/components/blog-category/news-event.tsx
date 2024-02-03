@@ -394,9 +394,9 @@ export default function News_events() {
                 </Grid>
               )}
             </Grid>
-          ) : (
+          ) : 
             <Loading />
-          )}
+          }
         </ThemeProvider>
       </Background>
     </React.Fragment>
